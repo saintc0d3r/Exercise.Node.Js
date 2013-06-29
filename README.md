@@ -18,6 +18,7 @@ HOW TO - Run the samples:
 =========================
 1. In the terminal box, change directory to the sample folder (e.g. cd Projects/web/Exercise.Node.Js/Demo.HttpServer).
 2. Type & run this command against the Node's javascript file in the sample demo. (e.g. hotnode exercise_http_server.js).
+3. Open your browser then browse to this URL: http://localhost:8080
 
 Sample Projects:
 ================
