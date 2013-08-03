@@ -1,0 +1,9 @@
+{
+    "name": "Demo.RestServer",
+    "version": "1.0.0",
+    "dependencies": {
+        "redis": "*",
+        "barista": "*",
+        "async": "*"
+    }
+}

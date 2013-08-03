@@ -8,10 +8,11 @@ var path = require('path');
 var mimeTypes = {'.html': 'text/html', '.js': 'text/js', '.css': 'text/css'};
 var pagesCache = new PagesCache();
 var whiteList = ['/', '/assets/css/bootstrap.min.css', '/assets/css/bootstrap-responsive.min.css' ];
+var httpPort = 8080;
 
 // Create the http server and get it to listen port 8080
 http.createServer(function (request, response){
-	// Ensure that the request.url is in whitelist
+	// Ensure that the request.url is in the whitelist
 	console.log("DEBUG: request.url="+request.url);
 	if (whiteList.indexOf(request.url)===-1){
 		response.writeHead(404);
@@ -26,7 +27,7 @@ http.createServer(function (request, response){
 	// Check whether the file exist or not
 	fs.exists(filePath, function(exists){
 		if (!exists){
-			// the file is not exist ! terminate the request
+			// the file does not exist ! terminate the request
 			response.writeHead(404);
 			response.end("ERROR: "+filePath+" file is not found!");
 			return;
@@ -65,6 +66,7 @@ http.createServer(function (request, response){
 									return;
 								});
 			
+			// Put the page's content into the cache
 			var bufferOffset = 0;
 			var pageData = new Buffer(stats.size);
 			fileStream.on('data', function(chunk){
@@ -79,12 +81,12 @@ http.createServer(function (request, response){
 
 		});
 	});	
-}).listen(8080);
+}).listen(httpPort);
 
 function resolveFilePath(requestUrl){
 	// Check whether the decoded requestUrl = / or not
 	var decodedUrl = decodeURI(requestUrl);
-	if (decodedUrl ==='/'){
+	if (path.basename(decodedUrl) ===''){
 
 		return 'index.html';
 	}
