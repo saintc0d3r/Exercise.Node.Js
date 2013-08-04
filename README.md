@@ -26,7 +26,7 @@ Sample Projects:
 ================
 1. Demo.HttpServer - A simple demo about creating a web server, using Node's http class which has page caching, page streaming & whitelisting features. 
 
-2. Demo.Node.RestServer - A simple REST server implemented using Node.js which does data CRUD operation on Redis NoSQL databse. To run this sample, you need to install & run Redis server and these following NPMs: Barista router,  jasmine-node, redis-node client.
+2. Demo.Node.RestServer - A simple REST server implemented using Node.js which does simple data CRUD operations on Redis NoSQL database. To run this sample, you need to install & run Redis server and these following NPMs: Barista router,  jasmine-node, redis-node client.
 
 Future TODOs:
 =============
