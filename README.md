@@ -8,6 +8,8 @@ Things to do before running the sample:
 
 Ensure that you have installed Node.js in your machine. Also, installing Node.js's Hotnode package (run 'npm install hotnode' command ) could save your time from stop-restarting Node.js server when you change your code.
 
+Some of the samples use Jasmine-Node as their unit testing framework (e.g. Demo.Node.RestServer). You need to install jasmine-node npm as well if you wish to run their unit tests.
+
 HOW TO - Pull the project from github to your local machine:
 ============================================================
 1. Open your terminal box ( press CTL+ALT+T if you are in GUI mode ).
@@ -23,6 +25,8 @@ HOW TO - Run the samples:
 Sample Projects:
 ================
 1. Demo.HttpServer - A simple demo about creating a web server, using Node's http class which has page caching, page streaming & whitelisting features. 
+
+2. Demo.Node.RestServer - A simple REST server implemented using Node.js which does data CRUD operation on Redis NoSQL databse. To run this sample, you need to install & run Redis server and these following NPMs: Barista router,  jasmine-node, redis-node client.
 
 Future TODOs:
 =============
